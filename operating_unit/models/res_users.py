@@ -8,6 +8,8 @@ from odoo import api, fields, models
 class ResUsers(models.Model):
     _inherit = "res.users"
 
+    _check_operating_unit_auto = True
+
     operating_unit_ids = fields.One2many(
         comodel_name="operating.unit",
         compute="_compute_operating_unit_ids",
